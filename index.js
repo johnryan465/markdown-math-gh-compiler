@@ -81,6 +81,9 @@ function translate(tokens, _line_stack) {
 			case "text":
 				compiled += token.content;
 				break;
+			case "hr":
+				compiled += token.content;
+				break;
 			case "image":
 				assert(token.attrs[0][0] == "src", "malformed image token");
 				compiled += `![${translate(token.children, line_stack)}](${token.attrs[0][1]}) `;
